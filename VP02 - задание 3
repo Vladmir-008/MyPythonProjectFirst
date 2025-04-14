@@ -1,0 +1,40 @@
+def caesar_cipher_encrypt(text, shift):
+    """
+    Функция для шифрования текста с использованием шифра Цезаря.
+    :param text: текст, который нужно зашифровать
+    :param shift: величина сдвига
+    :return: зашифрованный текст
+    """
+    result = ""
+    for char in text:
+        if char.isalpha():  # Проверяем, является ли символ буквой
+            # Определяем, работаем с прописной или строчной буквой
+            start = ord('A') if char.isupper() else ord('a')
+            # Смещаем символ и возвращаем в диапазон алфавита
+            result += chr((ord(char) - start + shift) % 26 + start)
+        else:
+            # Если символ не буква, оставляем его без изменений
+            result += char
+    return result
+
+
+def caesar_cipher_decrypt(text, shift):
+    """
+    Функция для дешифрования текста, зашифрованного шифром Цезаря.
+    :param text: зашифрованный текст
+    :param shift: величина сдвига
+    :return: расшифрованный текст
+    """
+    return caesar_cipher_encrypt(text, -shift)  # Расшифровка — это сдвиг в обратную сторону
+
+
+if __name__ == "__main__":
+    print("Шифр Цезаря")
+    text = input("Введите текст для шифрования: ")
+    shift = int(input("Введите величину сдвига (целое число): "))
+
+    encrypted_text = caesar_cipher_encrypt(text, shift)
+    print(f"Зашифрованный текст: {encrypted_text}")
+
+    decrypted_text = caesar_cipher_decrypt(encrypted_text, shift)
+    print(f"Расшифрованный текст: {decrypted_text}")
