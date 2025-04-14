@@ -1,0 +1,46 @@
+def calculator():
+    print("Добро пожаловать в калькулятор!")
+    print("Доступные операции:")
+    print("1. Сложение (+)")
+    print("2. Вычитание (-)")
+    print("3. Умножение (*)")
+    print("4. Деление (/)")
+
+    while True:
+        try:
+            choice = input("Введите номер операции (1/2/3/4) или 'q' для выхода: ")
+
+            if choice.lower() == 'q':
+                print("Выход из калькулятора. Пока!")
+                break
+
+            if choice not in ('1', '2', '3', '4'):
+                print("Неверный выбор. Попробуйте снова.")
+                continue
+
+            num1 = float(input("Введите первое число: "))
+            num2 = float(input("Введите второе число: "))
+
+            if choice == '1':
+                result = num1 + num2
+                print(f"Результат: {num1} + {num2} = {result}")
+            elif choice == '2':
+                result = num1 - num2
+                print(f"Результат: {num1} - {num2} = {result}")
+            elif choice == '3':
+                result = num1 * num2
+                print(f"Результат: {num1} * {num2} = {result}")
+            elif choice == '4':
+                if num2 == 0:
+                    print("Ошибка: Деление на ноль невозможно.")
+                else:
+                    result = num1 / num2
+                    print(f"Результат: {num1} / {num2} = {result}")
+        except ValueError:
+            print("Ошибка ввода. Пожалуйста, введите числа.")
+        except Exception as e:
+            print(f"Произошла ошибка: {e}")
+
+
+if __name__ == "__main__":
+    calculator()
