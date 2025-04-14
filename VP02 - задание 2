@@ -1,0 +1,28 @@
+def compress_string(s):
+    if not s:  # Проверяем, что строка не пустая
+        return ""
+    
+    compressed = []  # Список для формирования сжатой строки
+    count = 1  # Счётчик повторений символа
+
+    # Проходим по строке
+    for i in range(1, len(s)):
+        if s[i] == s[i - 1]:  # Если текущий символ такой же, как предыдущий
+            count += 1
+        else:
+            # Добавляем предыдущий символ и его количество в сжатую строку
+            compressed.append(s[i - 1] + str(count))
+            count = 1  # Сбрасываем счётчик повторений
+
+    # Добавляем последний символ и его количество
+    compressed.append(s[-1] + str(count))
+
+    # Возвращаем сжатую строку
+    return ''.join(compressed)
+
+
+# Пример использования
+input_string = "aabcccccaaa"
+result = compress_string(input_string)
+print(f"Исходная строка: {input_string}")
+print(f"Сжатая строка: {result}")
