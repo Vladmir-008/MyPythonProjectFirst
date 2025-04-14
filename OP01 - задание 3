@@ -1,0 +1,4 @@
+string = input("Введите первую строку: ")
+string2 = input("Ввведите вторую строку: ")
+result = string + string2
+print("Результат конкатенации: " + result)
