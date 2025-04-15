@@ -1,0 +1,31 @@
+def main():
+    print("Добро пожаловать в конвертер валют!")
+    
+    # Ввод исходной и целевой валюты
+    base_currency = input("Введите код исходной валюты (например, USD): ").upper()
+    target_currency = input("Введите код целевой валюты (например, EUR): ").upper()
+
+    # Ввод курса валюты
+    try:
+        exchange_rate = float(input(f"Введите курс обмена {base_currency} -> {target_currency}: "))
+    except ValueError:
+        print("Ошибка: введён некорректный курс. Завершение программы.")
+        return
+
+    # Бесконечный цикл для конвертации сумм
+    while True:
+        try:
+            # Ввод суммы для конвертации
+            amount = float(input(f"Введите сумму в {base_currency} для конвертации (или введите 0 для выхода): "))
+            if amount == 0:
+                print("Выход из программы. Спасибо за использование!")
+                break
+
+            # Конвертация суммы
+            converted_amount = amount * exchange_rate
+            print(f"{amount} {base_currency} = {converted_amount:.2f} {target_currency}")
+        except ValueError:
+            print("Ошибка: введена некорректная сумма. Попробуйте ещё раз.")
+
+if __name__ == "__main__":
+    main()
