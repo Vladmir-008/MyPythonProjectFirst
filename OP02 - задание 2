@@ -1,0 +1,9 @@
+numbers = []
+numbers.extend([5,8,10])
+print(numbers)
+numbers.insert(0,7)
+numbers.insert(0,9)
+print(numbers)
+numbers.sort()
+numbers.reverse()
+print(numbers)
