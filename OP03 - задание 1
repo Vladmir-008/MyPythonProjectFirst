@@ -1,0 +1,14 @@
+# Запрашиваем три числа у пользователя
+number1 = float(input("Введите первое число: "))
+number2 = float(input("Введите второе число: "))
+number3 = float(input("Введите третье число: "))
+
+# Сравниваем числа вручную
+if number1 < number2 and number1 < number3:
+    smallest = number1
+elif number2 < number3:
+    smallest = number2
+else:
+    smallest = number3
+# Выводим результат
+print(f"Наименьшее число: {smallest}")
