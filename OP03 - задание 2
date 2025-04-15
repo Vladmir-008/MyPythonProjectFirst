@@ -1,0 +1,11 @@
+number1 = int(input("Введите первое число: "))
+s = input("Введите знак математической операции: ")
+number2 = int(input("Введите второе число: "))
+if s == "+":
+    print("Сумма равна:", number1 + number2)
+elif s == "-":
+    print("Разность равна:", number1 - number2)
+elif s == "*":
+    print("Итог уровнения:", number1 * number2)
+elif s == "/":
+    print("Итог уровнения:", number1 / number2)
