@@ -1,0 +1,4 @@
+set = {12,15,22,24,36,55,66}
+set1 = {13,18,21,33,54,65}
+setcouple = set.union(set1)
+print(setcouple)
