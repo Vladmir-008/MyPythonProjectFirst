@@ -1,0 +1,10 @@
+
+
+def sum_renge(start,end):
+    result = 0
+    for i in range(start,end +1):
+        result = result + i
+        print(result)
+    return result
+sum = sum_renge(2,6)
+print(f"конечный результат - {sum}")
