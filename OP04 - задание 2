@@ -1,0 +1,7 @@
+def square(side):
+    perimetr = side * 4
+    area = side ** 2
+    diagonal = side * 2 ** 0.5
+    return perimetr, area , diagonal
+num1,num2,num3 = square(5)
+print(num1,num2,num3)
