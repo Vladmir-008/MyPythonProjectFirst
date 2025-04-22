@@ -1,0 +1,8 @@
+def bank(a,years):
+    rate = 0.1
+    for i in range(years):
+        a = a + a * rate
+        print(f"денег на счету с учетом начисленных процентов за год - {a}")
+    return a
+result = bank(5000,5)
+print(f"Сумма на счету после 5 лет - {result}")
